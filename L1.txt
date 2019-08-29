@@ -1,0 +1,12 @@
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+      HashMap<Integer,Integer> good = new HashMap<>();
+      for(int i = 0; i < nums.length;i++){
+          int outcome = target-nums[i];
+          if(good.containsKey(outcome))
+              return new int[]{good.get(outcome),i};
+          good.put(nums[i],i);
+      }
+         throw new IllegalArgumentException("No two sum solution");
+    }
+}
