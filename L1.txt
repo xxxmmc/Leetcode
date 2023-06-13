@@ -9,4 +9,31 @@ class Solution {
       }
          throw new IllegalArgumentException("No two sum solution");
     }
-}
+
+
+DFS注意事项:
+1. 在dfs函数里，首先要判断出dfs的条件，而不是写一个判断进入dfs的条件，由于i+1, i-1会导致程序一直卡在循环里没有办法出来，所以一定要先判断，再写dfs
+经典错误
+
+class Solution(object):
+    def numIslands(self, grid):
+        def dfs(i, j ,grid):
+            if(i >= 0 and i < len(grid) and j >=0 and j < len(grid[0]) && grid[i][j] == 1):
+                grid[i][j] = '0'
+                dfs(i+1, j, grid)
+                dfs(i-1, j, grid)
+                dfs(i, j+1, grid)
+                dfs(i, j-1, grid)
+        
+        """
+        :type grid: List[List[str]]
+        :rtype: int
+        """
+        num = 0
+        for i in range(len(grid)):
+            for j in range(len(grid[0])):
+                if(grid[i][j] == '1'):
+                    print(i,j)
+                    num +=1
+                    dfs(i,j,grid)
+        return numf
