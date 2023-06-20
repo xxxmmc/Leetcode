@@ -38,3 +38,8 @@ class Solution(object):
                     num +=1
                     dfs(i,j,grid)
         return numf
+
+
+
+图：拓扑排序的问题
+https://leetcode.com/problems/build-a-matrix-with-conditions/solutions/2494715/topological-sorting-kahn-s-algorithm/
